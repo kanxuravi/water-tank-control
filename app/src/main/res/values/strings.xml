@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">RANtext</string>
+    <string name="stop_motor">Stop Motor</string>
+    <string name="start_motor">Start Motor</string>
+    <string name="reserve_tank">Reserve Tank</string>
+    <string name="reserve_value">N/A</string>
+    <string name="location1">N/A</string>
+    <string name="text2">Tank at Location 2</string>
+    <string name="text1">Tank at Location 1</string>
+    <string name="location2">N/A</string>
+    <string name="text3">Tank at Location 3</string>
+    <string name="location3">N/A</string>
+    <string name="text4">Tank at Location 4</string>
+    <string name="location4">N/A</string>
 </resources>
