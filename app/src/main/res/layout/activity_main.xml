@@ -1,0 +1,34 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="15dp"
+    android:focusable="auto"
+    android:clickable="true"
+    android:animationCache="true"
+    android:focusableInTouchMode="true"
+    android:touchscreenBlocksFocus="true"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="28dp"
+        android:padding="1dp"
+        android:text="Start"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btn0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="211dp"
+        android:layout_marginTop="27dp"
+        android:padding="1dp"
+        android:text="Stop"
+        android:textSize="16sp" />
+
+</RelativeLayout>
