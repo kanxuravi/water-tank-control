@@ -10,6 +10,10 @@ import android.widget.Toast;
 public class SmsBroadcastReceiver extends BroadcastReceiver
 {
     public static final String SMS_BUNDLE = "pdus";
+    public String smsMessageView = "";
+    public String sender = "";
+    public String characters = "";
+
     @Override
 
     public void onReceive(Context context, Intent intent)
@@ -17,22 +21,23 @@ public class SmsBroadcastReceiver extends BroadcastReceiver
         Bundle intentExtras = intent.getExtras();
         if (intentExtras != null) {
             Object[] sms = (Object[]) intentExtras.get(SMS_BUNDLE);
-            String smsMessageStr = "";
+
             for (int i = 0; i < sms.length; ++i)
             {
                 SmsMessage smsMessage = SmsMessage.createFromPdu((byte[]) sms[i]);
-
                 String smsBody = smsMessage.getMessageBody();
                 String address = smsMessage.getOriginatingAddress();
 
-                smsMessageStr += "SMS From: " + address + "\n";
-                smsMessageStr += smsBody + "\n";
+                smsMessageView += "SMS From: " + address + "\n";
+                smsMessageView += smsBody + "\n";
+                characters = smsBody;
+                sender = address;
+
             }
 
-
-            Toast.makeText(context, smsMessageStr, Toast.LENGTH_SHORT).show();
-
+            Toast.makeText(context, smsMessageView, Toast.LENGTH_SHORT).show();
 
         }
     }
+
 }
