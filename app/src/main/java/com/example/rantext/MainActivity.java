@@ -16,7 +16,7 @@ import com.tbruyelle.rxpermissions2.RxPermissions;
 public class MainActivity extends AppCompatActivity
 {
     Button send1, send0;
-    public TextView reserve, location1, location2, location3, location4;
+    public TextView reserveVal, location1Val, location2Val, location3Val, location4Val;
     @Override
 
     protected void onCreate(Bundle savedInstanceState)
@@ -26,12 +26,11 @@ public class MainActivity extends AppCompatActivity
         setTitle("निलकण्ठ नगरपालिका वाटर पुम्प कन्ट्रोल");
         send1 = findViewById(R.id.btn1);
         send0 = findViewById(R.id.btn0);
-        reserve = findViewById(R.id.reserve);
-        location1 = findViewById(R.id.location1);
-        location2 = findViewById(R.id.location2);
-        location3 = findViewById(R.id.location3);
-        location4 = findViewById(R.id.location4);
-
+        reserveVal = findViewById(R.id.reserve);
+        location1Val = findViewById(R.id.location1);
+        location2Val = findViewById(R.id.location2);
+        location3Val = findViewById(R.id.location3);
+        location4Val = findViewById(R.id.location4);
 
         try
         {
@@ -112,8 +111,6 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-
-
-
     }
+
 

@@ -5,8 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.SmsMessage;
-import android.util.Log;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class SmsBroadcastReceiver extends BroadcastReceiver
@@ -24,6 +22,7 @@ public class SmsBroadcastReceiver extends BroadcastReceiver
         if (intentExtras != null) {
             Object[] sms = (Object[]) intentExtras.get(SMS_BUNDLE);
 
+            assert sms != null;
             for (Object sm : sms) {
                 SmsMessage smsMessage = SmsMessage.createFromPdu((byte[]) sm);
                 String smsBody = smsMessage.getMessageBody();
@@ -37,16 +36,6 @@ public class SmsBroadcastReceiver extends BroadcastReceiver
             }
 
             Toast.makeText(context, smsMessageView, Toast.LENGTH_SHORT).show();
-
-            MainActivity main = new MainActivity();
-            TextView all = main.reserve;
-            CharSequence charac = characters;
-            try{
-            all.setText(charac);
-            }
-            catch (RuntimeException ex){
-                Toast.makeText(context,"Error Occurred",Toast.LENGTH_SHORT).show();
-            }
 
             }
         }
