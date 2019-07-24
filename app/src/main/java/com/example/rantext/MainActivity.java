@@ -16,7 +16,7 @@ import com.tbruyelle.rxpermissions2.RxPermissions;
 public class MainActivity extends AppCompatActivity
 {
     Button send1, send0;
-    TextView reserve, location1, location2, location3, location4;
+    public TextView reserve, location1, location2, location3, location4;
     @Override
 
     protected void onCreate(Bundle savedInstanceState)
@@ -32,10 +32,6 @@ public class MainActivity extends AppCompatActivity
         location3 = findViewById(R.id.location3);
         location4 = findViewById(R.id.location4);
 
-        if(receivedmno.equals("+9779816207311"))
-        {
-            reserve.setText(receivedChar);
-        }
 
         try
         {
@@ -115,17 +111,7 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    public String charReceiver(){
-        SmsBroadcastReceiver sms = new SmsBroadcastReceiver();
-        return sms.characters;
-    }
-    String receivedChar = charReceiver();
 
-    public String mnoReceiver(){
-        SmsBroadcastReceiver no = new SmsBroadcastReceiver();
-        return no.sender;
-    }
-    String receivedmno = mnoReceiver();
 
 
 
