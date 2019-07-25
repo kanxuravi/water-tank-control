@@ -2,7 +2,9 @@ package com.example.rantext;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.SmsManager;
@@ -16,7 +18,7 @@ import com.tbruyelle.rxpermissions2.RxPermissions;
 public class MainActivity extends AppCompatActivity
 {
     Button send1, send0;
-    public TextView reserveVal, location1Val, location2Val, location3Val, location4Val;
+    TextView res;
     @Override
 
     protected void onCreate(Bundle savedInstanceState)
@@ -26,11 +28,8 @@ public class MainActivity extends AppCompatActivity
         setTitle("निलकण्ठ नगरपालिका वाटर पुम्प कन्ट्रोल");
         send1 = findViewById(R.id.btn1);
         send0 = findViewById(R.id.btn0);
-        reserveVal = findViewById(R.id.reserve);
-        location1Val = findViewById(R.id.location1);
-        location2Val = findViewById(R.id.location2);
-        location3Val = findViewById(R.id.location3);
-        location4Val = findViewById(R.id.location4);
+        res = findViewById(R.id.reserve);
+
 
         try
         {
@@ -53,8 +52,6 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(MainActivity.this,"Unknown Error Occurred",Toast.LENGTH_SHORT).show();
         }
     }
-
-
 
     public void send1()
     {
@@ -109,8 +106,4 @@ public class MainActivity extends AppCompatActivity
 
 
     }
-
-
-    }
-
-
+}
